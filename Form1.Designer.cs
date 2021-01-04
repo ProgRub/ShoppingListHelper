@@ -37,6 +37,7 @@
             this.dropdown_productCategories = new System.Windows.Forms.ComboBox();
             this.lbl_dropdown = new System.Windows.Forms.Label();
             this.btn_checkAll = new System.Windows.Forms.Button();
+            this.buttonDeleteItems = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_addProduct
@@ -56,7 +57,7 @@
             this.checkBox_possibleProducts.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.checkBox_possibleProducts.CheckOnClick = true;
             this.checkBox_possibleProducts.ColumnWidth = 250;
-            this.checkBox_possibleProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox_possibleProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox_possibleProducts.ForeColor = System.Drawing.Color.White;
             this.checkBox_possibleProducts.FormattingEnabled = true;
             this.checkBox_possibleProducts.Location = new System.Drawing.Point(63, 141);
@@ -111,7 +112,6 @@
             this.dropdown_productCategories.Name = "dropdown_productCategories";
             this.dropdown_productCategories.Size = new System.Drawing.Size(541, 33);
             this.dropdown_productCategories.TabIndex = 6;
-            this.dropdown_productCategories.SelectedIndex = 0;
             // 
             // lbl_dropdown
             // 
@@ -129,11 +129,22 @@
             this.btn_checkAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_checkAll.Location = new System.Drawing.Point(1221, 141);
             this.btn_checkAll.Name = "btn_checkAll";
-            this.btn_checkAll.Size = new System.Drawing.Size(161, 31);
+            this.btn_checkAll.Size = new System.Drawing.Size(184, 31);
             this.btn_checkAll.TabIndex = 8;
             this.btn_checkAll.Text = "Selecionar Todos";
             this.btn_checkAll.UseVisualStyleBackColor = true;
             this.btn_checkAll.Click += new System.EventHandler(this.btn_checkAll_Click);
+            // 
+            // buttonDeleteItems
+            // 
+            this.buttonDeleteItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDeleteItems.Location = new System.Drawing.Point(1221, 192);
+            this.buttonDeleteItems.Name = "buttonDeleteItems";
+            this.buttonDeleteItems.Size = new System.Drawing.Size(184, 31);
+            this.buttonDeleteItems.TabIndex = 9;
+            this.buttonDeleteItems.Text = "Eliminar Selecionados";
+            this.buttonDeleteItems.UseVisualStyleBackColor = true;
+            this.buttonDeleteItems.Click += new System.EventHandler(this.buttonDeleteItems_Click);
             // 
             // Form1
             // 
@@ -143,6 +154,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(14)))), ((int)(((byte)(14)))));
             this.ClientSize = new System.Drawing.Size(1430, 761);
+            this.Controls.Add(this.buttonDeleteItems);
             this.Controls.Add(this.btn_checkAll);
             this.Controls.Add(this.lbl_dropdown);
             this.Controls.Add(this.dropdown_productCategories);
@@ -162,13 +174,14 @@
 
         #endregion
         private System.Windows.Forms.Label lbl_addProduct;
-        private System.Windows.Forms.CheckedListBox checkBox_possibleProducts;
         private System.Windows.Forms.TextBox entry_product;
         private System.Windows.Forms.Button btn_addProduct;
         private System.Windows.Forms.Button btn_makeExcelSheet;
         private System.Windows.Forms.ComboBox dropdown_productCategories;
         private System.Windows.Forms.Label lbl_dropdown;
         private System.Windows.Forms.Button btn_checkAll;
+        private System.Windows.Forms.Button buttonDeleteItems;
+        public System.Windows.Forms.CheckedListBox checkBox_possibleProducts;
     }
 }
 

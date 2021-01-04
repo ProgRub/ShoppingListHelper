@@ -1,15 +1,9 @@
 ﻿using System;
 using System.IO;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
-using System.Xml;
 using System.Reflection;
 using ClosedXML.Excel;
 
@@ -25,6 +19,7 @@ namespace ShoppingListHelper
         public Form1()
         {
             InitializeComponent();
+            this.dropdown_productCategories.SelectedIndex = 0;
             this.checkAll = false;
             var heightField = typeof(CheckedListBox).GetField("scaledListItemBordersHeight", BindingFlags.NonPublic | BindingFlags.Instance);
             var addedHeight = 5; // Some appropriate value, greater than the field's default of 2
@@ -35,28 +30,10 @@ namespace ShoppingListHelper
             this.xmlProducts = XDocument.Load(this.filePath);
             try
             {
-                //this.xmlProducts.Load(filePath);
                 var products = this.xmlProducts.Root.Elements("Product").ToList();
                 for (int index = 0; index < products.Count; index++)
                 {
-                    Console.WriteLine(products[index].Value);
                     var productName = products[index].Value;
-                    if (Convert.ToInt32(products[index].Attribute("forWho").Value) == 1)
-                    {
-                        productName += " R";
-                    }
-                    else if (Convert.ToInt32(products[index].Attribute("forWho").Value) == 2)
-                    {
-                        productName += " Mãe";
-                    }
-                    else if (Convert.ToInt32(products[index].Attribute("forWho").Value) == 3)
-                    {
-                        productName += " L";
-                    }
-                    else if (Convert.ToInt32(products[index].Attribute("forWho").Value) == 4)
-                    {
-                        productName += " J";
-                    }
                     int indexOfProduct = this.checkBox_possibleProducts.Items.Add(productName);
                     if (Convert.ToBoolean(products[index].Attribute("selected").Value))
                     {
@@ -82,34 +59,26 @@ namespace ShoppingListHelper
             string product = this.entry_product.Text.Trim();
             if (product.Length != 0)
             {
-                XElement productNode = new XElement("Product");
-                productNode.Value = product;
+                //XElement productNode = new XElement("Product");
                 if (this.dropdown_productCategories.Text == "Rúben")
                 {
                     product += " R";
-                    productNode.SetAttributeValue("forWho", "1");
                 }
                 else if (this.dropdown_productCategories.Text == "Mãe")
                 {
                     product += " Mãe";
-                    productNode.SetAttributeValue("forWho", "2");
                 }
                 else if (this.dropdown_productCategories.Text == "Lígia")
                 {
                     product += " L";
-                    productNode.SetAttributeValue("forWho", "3");
                 }
                 else if (this.dropdown_productCategories.Text == "José")
                 {
                     product += " J";
-                    productNode.SetAttributeValue("forWho", "4");
                 }
-                else
-                {
-                    productNode.SetAttributeValue("forWho", "0");
-                }
-                productNode.SetAttributeValue("selected", true.ToString());
-                this.xmlProducts.Root.Add(productNode);
+                //productNode.Value = product;
+                //productNode.SetAttributeValue("selected", true.ToString());
+                //this.xmlProducts.Root.Add(productNode);
                 int index = this.checkBox_possibleProducts.Items.Add(product);
                 this.checkBox_possibleProducts.SetItemChecked(index, true);
             }
@@ -118,17 +87,17 @@ namespace ShoppingListHelper
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            var productsList = xmlProducts.Root.Elements().OrderBy(element => element.Value).ThenByDescending(element=>element.Attribute("forWho").Value).ToList();
-            //Console.WriteLine(productsList.ToString());
             xmlProducts.Root.Descendants().Remove();
-            //Console.WriteLine("HERE");
-            //foreach (XElement product in xmlProducts.Root.Descendants())
-            //    Console.WriteLine(product.Value);
-            for (int index = 0; index < productsList.Count; index++)
+            for (int index = 0; index < this.checkBox_possibleProducts.Items.Count; index++)
             {
-                productsList[index].Attribute("selected").Value = this.checkBox_possibleProducts.GetItemChecked(index).ToString();
+                //this.productsList[index].Value = this.checkBox_possibleProducts.Items[index].ToString();
+                //this.productsList[index].RemoveAttributes();
+                //this.xmlProducts.Root.Elements().ToList()[index].SetAttributeValue("selected", this.checkBox_possibleProducts.GetItemChecked(index).ToString());
+                XElement productNode = new XElement("Product",this.checkBox_possibleProducts.Items[index].ToString());
+                productNode.SetAttributeValue("selected", this.checkBox_possibleProducts.GetItemChecked(index).ToString());
+                xmlProducts.Root.Add(productNode);
             }
-            xmlProducts.Root.Add(productsList);
+            //xmlProducts.Root.Add(this.productsList);
             this.xmlProducts.Save(filePath);
         }
 
@@ -140,33 +109,18 @@ namespace ShoppingListHelper
                 Dictionary<string, int> cellsLetters_numberOfProducts = new Dictionary<string, int>();
                 List<string> productsNotForMom = new List<string>();
                 List<string> productsForMom = new List<string>();
-                var products = this.xmlProducts.Root.Elements().ToList();
-                for (int index = 0; index < products.Count; index++)
+                //var products = this.xmlProducts.Root.Elements().ToList();
+                for (int index = 0; index < this.checkBox_possibleProducts.Items.Count; index++)
                 {
                     if (this.checkBox_possibleProducts.GetItemChecked(index))
                     {
-                        if (products[index].Attribute("forWho").Value == "2")
+                        if (this.checkBox_possibleProducts.Items[index].ToString().EndsWith(" Mãe"))
                         {
-                            productsForMom.Add(products[index].Value);
+                            productsForMom.Add(this.checkBox_possibleProducts.Items[index].ToString());
                         }
                         else
                         {
-                            if (products[index].Attribute("forWho").Value == "3")
-                            {
-                                productsNotForMom.Add(products[index].Value + " L");
-                            }
-                            else if (products[index].Attribute("forWho").Value == "4")
-                            {
-                                productsNotForMom.Add(products[index].Value + " J");
-                            }
-                            else if (products[index].Attribute("forWho").Value == "1")
-                            {
-                                productsNotForMom.Add(products[index].Value + " R");
-                            }
-                            else
-                            {
-                                productsNotForMom.Add(products[index].Value);
-                            }
+                            productsNotForMom.Add(this.checkBox_possibleProducts.Items[index].ToString());
                         }
                     }
                 }
@@ -262,5 +216,18 @@ namespace ShoppingListHelper
                 this.checkBox_possibleProducts.SetItemChecked(index, this.checkAll);
             }
         }
+
+        private void buttonDeleteItems_Click(object sender, EventArgs e)
+        {
+            for (int index = 0; index < this.checkBox_possibleProducts.Items.Count; index++)
+            {
+                if (this.checkBox_possibleProducts.GetItemChecked(index))
+                {
+                    this.checkBox_possibleProducts.Items.RemoveAt(index);
+                    index--;
+                }
+            }
+        }
+
     }
 }

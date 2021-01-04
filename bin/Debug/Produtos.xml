@@ -1,53 +1,97 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <Product forWho="0" selected="True">Açúcar</Product>
-  <Product forWho="0" selected="True">Amaciador</Product>
-  <Product forWho="0" selected="True">Ariel</Product>
-  <Product forWho="0" selected="True">Arroz</Product>
-  <Product forWho="0" selected="True">Atum</Product>
-  <Product forWho="0" selected="True">Azeite</Product>
-  <Product forWho="0" selected="True">Azeitonas</Product>
-  <Product forWho="0" selected="True">Bacon</Product>
-  <Product forWho="0" selected="True">Bloco WC</Product>
-  <Product forWho="0" selected="True">Bolo do Caco</Product>
-  <Product forWho="0" selected="True">Bolo Limão</Product>
-  <Product forWho="0" selected="True">Café</Product>
-  <Product forWho="0" selected="True">Chocolate</Product>
-  <Product forWho="0" selected="True">Chouriço</Product>
-  <Product forWho="2" selected="True">Cif Líxivia</Product>
-  <Product forWho="1" selected="True">Desodorizante</Product>
-  <Product forWho="0" selected="True">Esparguete</Product>
-  <Product forWho="0" selected="True">Farinha</Product>
-  <Product forWho="0" selected="True">Feijão</Product>
-  <Product forWho="0" selected="True">Fiambre</Product>
-  <Product forWho="0" selected="True">Gel Banho</Product>
-  <Product forWho="0" selected="True">Geleias</Product>
-  <Product forWho="0" selected="True">Hamburgueres</Product>
-  <Product forWho="0" selected="True">Heinz Coentro Alho</Product>
-  <Product forWho="0" selected="True">Iogurtes</Product>
-  <Product forWho="0" selected="True">Líxivia</Product>
-  <Product forWho="0" selected="True">Massa</Product>
-  <Product forWho="0" selected="True">Molho Inglês</Product>
-  <Product forWho="0" selected="True">Molho Soja</Product>
-  <Product forWho="0" selected="True">Natas</Product>
-  <Product forWho="0" selected="True">Óleo</Product>
-  <Product forWho="0" selected="True">Ovos</Product>
-  <Product forWho="0" selected="True">Pão de Forma</Product>
-  <Product forWho="0" selected="True">Papel Alumínio</Product>
-  <Product forWho="0" selected="True">Papel Coz</Product>
-  <Product forWho="0" selected="True">Papel Hig</Product>
-  <Product forWho="0" selected="True">Polpa Tomate</Product>
-  <Product forWho="0" selected="True">Queijo Cheddar</Product>
-  <Product forWho="0" selected="True">Queijo T.Nostra</Product>
-  <Product forWho="0" selected="True">Sabão Loiça</Product>
-  <Product forWho="0" selected="True">Sal</Product>
-  <Product forWho="0" selected="True">Salsichas</Product>
-  <Product forWho="0" selected="True">Salsichas Peru</Product>
-  <Product forWho="0" selected="True">Sardinhas</Product>
-  <Product forWho="4" selected="True">Shampoo</Product>
-  <Product forWho="3" selected="True">Shampoo</Product>
-  <Product forWho="1" selected="True">Shampoo</Product>
-  <Product forWho="0" selected="True">Sunquick</Product>
-  <Product forWho="0" selected="True">Tiramisú</Product>
-  <Product forWho="0" selected="True">Vinagre</Product>
+  <Product selected="False">Açúcar</Product>
+  <Product selected="False">Água Mãe</Product>
+  <Product selected="False">Amaciador</Product>
+  <Product selected="False">Amoniacal</Product>
+  <Product selected="False">Ariel</Product>
+  <Product selected="False">Arroz</Product>
+  <Product selected="False">Atum</Product>
+  <Product selected="False">Azeite</Product>
+  <Product selected="False">Azeitonas</Product>
+  <Product selected="False">Bacon</Product>
+  <Product selected="False">Batata Frita</Product>
+  <Product selected="False">Batata frita vinagre Mãe</Product>
+  <Product selected="False">Baygon</Product>
+  <Product selected="False">Becel</Product>
+  <Product selected="False">Becel Mãe</Product>
+  <Product selected="False">Bolo Limão</Product>
+  <Product selected="False">Brisa maçã Mãe</Product>
+  <Product selected="False">Café</Product>
+  <Product selected="False">Carro cheiro</Product>
+  <Product selected="False">Chá</Product>
+  <Product selected="False">Chantilly</Product>
+  <Product selected="False">Chocolate</Product>
+  <Product selected="False">Chouriço</Product>
+  <Product selected="False">Cif Líxivia</Product>
+  <Product selected="False">Cif Líxivia Mãe</Product>
+  <Product selected="False">Cogumelos</Product>
+  <Product selected="False">Delicias mar</Product>
+  <Product selected="False">Desodorizante R</Product>
+  <Product selected="False">Ervilhas</Product>
+  <Product selected="False">Escova dentes</Product>
+  <Product selected="False">Esfregão</Product>
+  <Product selected="False">Esfregona</Product>
+  <Product selected="False">Esparguete</Product>
+  <Product selected="False">Farinha</Product>
+  <Product selected="False">Feijão</Product>
+  <Product selected="False">Fiambre</Product>
+  <Product selected="False">Gel Banho</Product>
+  <Product selected="False">Gelado</Product>
+  <Product selected="False">Geleias</Product>
+  <Product selected="False">Grão</Product>
+  <Product selected="False">Hamburgueres</Product>
+  <Product selected="False">Heinz cocktail</Product>
+  <Product selected="False">Iced Tea</Product>
+  <Product selected="False">Iogurtes</Product>
+  <Product selected="False">Labello</Product>
+  <Product selected="False">Laca Syoss Max (verde) Mãe</Product>
+  <Product selected="False">Lava tudo</Product>
+  <Product selected="False">Lexivia 4L Mãe</Product>
+  <Product selected="True">Líxivia</Product>
+  <Product selected="False">Luvas</Product>
+  <Product selected="False">Maionese</Product>
+  <Product selected="False">Máscara Cabelo</Product>
+  <Product selected="False">Massa</Product>
+  <Product selected="False">Milho doce</Product>
+  <Product selected="False">Molho Inglês</Product>
+  <Product selected="False">Molho Soja</Product>
+  <Product selected="False">Natas</Product>
+  <Product selected="True">Óleo</Product>
+  <Product selected="False">Ovos</Product>
+  <Product selected="False">Paladim Coentros Alho</Product>
+  <Product selected="False">Pão de Forma</Product>
+  <Product selected="False">Papel Alumínio</Product>
+  <Product selected="False">Papel Coz</Product>
+  <Product selected="False">Papel Hig</Product>
+  <Product selected="False">Paradontax Mãe</Product>
+  <Product selected="False">Pasta dentrífica</Product>
+  <Product selected="False">Pensos higien.</Product>
+  <Product selected="False">Pensos rápidos</Product>
+  <Product selected="False">Pilhas</Product>
+  <Product selected="False">Polpa Tomate</Product>
+  <Product selected="False">Pronto móveis</Product>
+  <Product selected="False">Pronto móveis Mãe</Product>
+  <Product selected="True">Queijo Cheddar</Product>
+  <Product selected="False">Queijo T.Nostra</Product>
+  <Product selected="False">Sabão Loiça</Product>
+  <Product selected="False">Sabão loiça limão Mãe</Product>
+  <Product selected="False">Sacos lixo 30L Mãe</Product>
+  <Product selected="True">Sacos sandes</Product>
+  <Product selected="False">Sal</Product>
+  <Product selected="False">Salame</Product>
+  <Product selected="False">Salsichas</Product>
+  <Product selected="False">Salsichas Peru</Product>
+  <Product selected="False">Sardinhas</Product>
+  <Product selected="False">Sensodyne Mãe</Product>
+  <Product selected="False">Shampoo</Product>
+  <Product selected="False">Shampoo L</Product>
+  <Product selected="False">Shampoo Mãe</Product>
+  <Product selected="False">Sunquick</Product>
+  <Product selected="False">Tiramisú</Product>
+  <Product selected="False">Vanish</Product>
+  <Product selected="False">Vinagre</Product>
+  <Product selected="False">WC Aroma</Product>
+  <Product selected="False">WC Bloco</Product>
+  <Product selected="False">WC Pato</Product>
 </root>
